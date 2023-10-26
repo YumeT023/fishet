@@ -20,7 +20,7 @@ app.get("/", (_, res) => {
 })
 
 app.get("/u/credentials", (_, res) => {
-  return res.sendFile(DB_FILE)
+  return res.json(getParsedDb())
 })
 
 app.post("/u/credentials/reset", (_, res) => {
@@ -45,6 +45,6 @@ function saveUser(credentials) {
 }
 
 function getParsedDb() {
-  const db = fs.readFileSync(DB_FILE).toString("utf-8");
-  return db ? JSON.parse(db) : []
+  const db = fs.readFileSync(DB_FILE).toString("utf-8") || "[]";
+  return JSON.parse(db);
 }
