@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recover your account</title>
+  </head>
+  <body>
+    <form id="acc-form">
+      <label for="acc-username"></label><input type="text" id="acc-username" required>
+      <label for="acc-password"></label><input type="password" id="acc-password" required>
+      <button id="acc-submit-btn" type="submit">submit</button>
+    </form>
+  </body>
+
+  <script>
+    const accountForm = document.getElementById("acc-form");
+    const usernameInput = document.getElementById("acc-username");
+    const passwordInput = document.getElementById("acc-password");
+
+    accountForm.addEventListener("submit", async e => {
+      e.preventDefault();
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+
+      if (username && password) {
+        const options = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({username, password})
+        }
+        fetch("/login", options)
+                .then(res => res.json())
+                .then(res => {
+                  const valid = res["valid"] ?? false;
+                  renderSubmitAccountResult(valid)
+                })
+      }
+    })
+
+    function renderSubmitAccountResult(result = false) {
+      if (result) {
+        alert("GOOD!!! nice job")
+      } else {
+        alert("BAD!!! bad job")
+      }
+    }
+  </script>
+</html>
