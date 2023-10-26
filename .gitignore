@@ -1,0 +1,6 @@
+# dep
+node_modules
+
+# IDE
+.vscode
+.idea
