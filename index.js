@@ -1,4 +1,4 @@
-import express, {json} from "express";
+import express, { json } from "express";
 import path from "node:path";
 import fs from "node:fs";
 import cors from "cors";
@@ -10,38 +10,47 @@ const DB_FILE = path.resolve("db.json");
 function createApp() {
   const server = express();
   server.use(json(), cors());
+  server.use(express.static(STATIC_DIR));
   return server;
 }
 
 const app = createApp();
 
 app.get("/", (_, res) => {
-  return res.sendFile(path.join(STATIC_DIR, "index.html"))
-})
+  return res.sendFile(path.join(STATIC_DIR, "index.html"));
+});
 
 app.get("/u/credentials", (_, res) => {
-  return res.json(getParsedDb())
-})
+  return res.json(getParsedDb());
+});
 
 app.post("/u/credentials/reset", (_, res) => {
   fs.writeFileSync(DB_FILE, "[]", "utf-8");
-  res.json({reset: true})
-})
+  res.json({ reset: true });
+});
 
-app.post('/login', (req, res) => {
+app.post("/login", (req, res) => {
   const payload = req.body;
   const valid = payload && payload["username"] && payload["password"];
   if (valid) saveUser(payload);
-  return res.json({valid});
-})
+  return res.json({ valid });
+});
+
+app.get("/**", (_, res) => {
+  res.redirect("/");
+});
 
 app.listen(PORT, () => {
-  console.log(`server listening on localhost:${PORT}`);
-})
+  console.log(`server listening on http://localhost:${PORT}`);
+});
 
 function saveUser(credentials) {
   const db = getParsedDb();
-  fs.writeFileSync(DB_FILE, JSON.stringify(db.concat(credentials), null, 2), "utf-8")
+  fs.writeFileSync(
+    DB_FILE,
+    JSON.stringify(db.concat(credentials), null, 2),
+    "utf-8",
+  );
 }
 
 function getParsedDb() {

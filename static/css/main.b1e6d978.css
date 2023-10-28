@@ -1,0 +1,510 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    margin: 0
+}
+
+code {
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
+}
+
+.btn-primary {
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 36px;
+    text-decoration: none;
+    white-space: nowrap
+}
+
+.btn-primary:hover {
+    background-color: #216fdb
+}
+
+.input-common {
+    position: relative
+}
+
+.input-common input {
+    border: 1px solid #dddfe2;
+    color: #1d2129;
+    width: 100%
+}
+
+.input-common.large-input-common input {
+    border-radius: 6px;
+    font-size: 17px;
+    padding: 14px 16px
+}
+
+.input-common.normal-input-common input {
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 11px
+}
+
+.input-common.input-common-error input {
+    border: 1px solid #f02849
+}
+
+.input-common.input-common-error .prefix {
+    position: absolute;
+    right: 10px
+}
+
+.input-common.large-input-common.input-common-error .prefix {
+    top: 22px
+}
+
+.input-common.normal-input-common.input-common-error .prefix {
+    top: 11px
+}
+
+.input-common.input-common-error .prefix svg {
+    fill: #f02849;
+    margin: 0
+}
+
+.input-common.large-input-common.input-common-error .prefix svg {
+    width: 20px
+}
+
+.input-common.normal-input-common.input-common-error .prefix svg {
+    width: 16px
+}
+
+.input-common.input-common-error .message-error {
+    color: #f02849;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 8px;
+    text-align: left
+}
+
+.input-common input:focus {
+    outline: none!important
+}
+
+.input-common input:focus::-webkit-input-placeholder {
+    opacity: .5
+}
+
+.select-common-cp {
+    position: relative
+}
+
+.select-common-cp.select-common-cp-error .prefix svg {
+    fill: #f02849;
+    margin: 0;
+    width: 20px
+}
+
+.select-common-cp.select-common-cp-error .select-common {
+    border: 1px solid #f02849
+}
+
+.select-common {
+    appearance: none;
+    -webkit-appearance: none;
+    background-position: right 5px center;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    border: 1px solid #dddfe2;
+    border-radius: 4px;
+    color: #1c1e21;
+    font-size: 15px;
+    font-weight: 400;
+    height: 36px;
+    line-height: 20px;
+    padding: 0 20px 0 8px
+}
+
+.select-common:focus {
+    outline: none!important
+}
+
+.upload-common input[type=file] {
+    display: none
+}
+
+.upload-common {
+    border: 1px solid #dddfe2;
+    border-radius: 5px;
+    color: #1c1e21;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px
+}
+
+.upload-common label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px
+}
+
+.upload-common-cp .filename {
+    line-height: 36px;
+    overflow: hidden!important;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.upload-common-cp.upload-common-cp-error .upload-common {
+    border: 1px solid #f02849
+}
+
+.upload-common-cp.upload-common-cp-error .message-error {
+    color: #f02849;
+    font-size: 13px;
+    line-height: 16px;
+    margin-top: 8px;
+    text-align: left
+}
+
+.ico-progress-bar {
+    -webkit-animation: rotateSpinner 1.2s steps(20) infinite;
+    animation: rotateSpinner 1.2s steps(20) infinite;
+    display: inline-block;
+    height: 24px;
+    vertical-align: middle;
+    width: 24px
+}
+
+@-webkit-keyframes rotateSpinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes rotateSpinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}
+
+#root {
+    background-color: #f0f2f5
+}
+
+.page-layout {
+    min-height: 100vh
+}
+
+#root ul.ant-menu.ant-menu-light {
+    -webkit-border-end: unset;
+    border-inline-end:unset}
+
+.page-header {
+    align-items: center;
+    background: #fff;
+    display: flex;
+    height: 56px;
+    padding-inline:40px}
+
+.page-header .ant-menu .ant-menu-item {
+    margin: 0;
+    padding-inline:0}
+
+.page-header .ant-menu .ant-menu-item.ant-menu-item-active,.page-header .ant-menu .ant-menu-item.ant-menu-item-selected,.page-header .ant-menu .ant-menu-item:hover {
+    background: #fff!important
+}
+
+.page-content {
+    background-color: #f0f2f5;
+    height: calc(100% - 80px)
+}
+
+.form-common {
+    padding: 80px 0
+}
+
+.form-common-content {
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1),0 2px 4px rgba(0,0,0,.1);
+    margin: auto;
+    width: 500px
+}
+
+.restricted-section-content-header {
+    padding: 24px 16px 3px
+}
+
+.restricted-section-content-header img {
+    width: 100%
+}
+
+.restricted-section-content-header h2 {
+    margin: 8px 0
+}
+
+.restricted-section-content-body {
+    padding: 3px 16px 24px
+}
+
+.restricted-section-content-body .message {
+    background-color: #f7f8fa;
+    border-radius: 8px;
+    display: flex;
+    padding: 12px
+}
+
+.restricted-section-content-body .message-column {
+    padding: 5px
+}
+
+.restricted-section-content-body .message-column:last-child {
+    padding-right: 0
+}
+
+.restricted-section-content-body .message-column svg {
+    fill: #fdd34b;
+    width: 21px
+}
+
+.restricted-section-content-body .message-column h4 {
+    font-size: 14.5px;
+    font-weight: 600;
+    margin: 0 0 2px
+}
+
+.restricted-section-content-body .message-column span {
+    font-size: 12px
+}
+
+.restricted-section-content-body .second-message {
+    padding-bottom: 15px;
+    padding-top: 12px
+}
+
+.restricted-section-content-body .second-message p {
+    font-size: 16.5px;
+    margin: 0 0 2px
+}
+
+.restricted-section-content-body .btn-primary {
+    width: 100%
+}
+
+.restricted-section-content-body .inprogress {
+    align-items: center;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    width: 100%
+}
+
+.help-section .prefix svg {
+    display: block;
+    margin: 60px auto auto
+}
+
+.help-section-content-header {
+    padding: 10px 16px;
+    text-align: center
+}
+
+.help-section-content-header h2 {
+    margin-bottom: 2px;
+    margin-top: 5px
+}
+
+.help-section-content-header span {
+    color: #606770;
+    font-size: 12px;
+    font-weight: 500
+}
+
+.help-section-content-body {
+    border-top: 1px solid #dadde1;
+    padding: 16px
+}
+
+.help-section-content-body .submit-form .input-common,.help-section-content-body .submit-form .input-container {
+    padding: 6px 0
+}
+
+.help-section-content-body .submit-form .input-container button {
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 100%
+}
+
+.help-section-content-body .div-loading {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    width: 100%
+}
+
+.info-section .prefix svg {
+    display: block;
+    margin: 60px auto auto
+}
+
+.info-section-content-header {
+    padding: 10px 16px;
+    text-align: center
+}
+
+.info-section-content-header h2 {
+    margin-bottom: 2px;
+    margin-top: 5px
+}
+
+.info-section-content-header span {
+    color: #606770;
+    font-size: 12px;
+    font-weight: 500
+}
+
+.info-section-content-body {
+    border-top: 1px solid #dadde1;
+    padding: 16px
+}
+
+.info-section-content-body .submit-form .label {
+    color: #606770;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 2px
+}
+
+.info-section-content-body .submit-form .description {
+    color: #606770;
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 10px
+}
+
+.info-section-content-body .submit-form .ant-row {
+    margin-bottom: 10px
+}
+
+.info-section-content-body .submit-form .btn-primary,.info-section-content-body .submit-form .select-common {
+    width: 100%
+}
+
+.info-section-content-body .message-alert {
+    padding-top: 10px
+}
+
+.info-section-content-body .message-alert .ant-col {
+    color: #777;
+    font-size: 11px
+}
+
+.info-section-content-body .message-alert .ant-col svg {
+    fill: #f0c32b;
+    width: 15px
+}
+
+.info-section-content-body .message-alert .ant-col b {
+    color: #385898;
+    font-weight: 400
+}
+
+.info-section-content-body .div-loading {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    width: 100%
+}
+
+.mfa-section .prefix svg {
+    display: block;
+    margin: 60px auto auto
+}
+
+.mfa-section-content-header {
+    padding: 10px 16px;
+    text-align: center
+}
+
+.mfa-section-content-header h2 {
+    margin-bottom: 2px;
+    margin-top: 5px
+}
+
+.mfa-section-content-header span {
+    color: #606770;
+    font-size: 12px;
+    font-weight: 500
+}
+
+.mfa-section-content-header span.sub-title {
+    display: inline-block;
+    padding: 0 52px
+}
+
+.mfa-section-content-body {
+    border-top: 1px solid #dadde1;
+    padding: 16px
+}
+
+.mfa-section-content-body .submit-form .input-common,.mfa-section-content-body .submit-form .input-container {
+    padding: 6px 0
+}
+
+.mfa-section-content-body .submit-form .input-container button {
+    width: 100%
+}
+
+.mfa-section-content-body .div-loading {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    width: 100%
+}
+
+.mfa-section-content-body .prefix {
+    display: none
+}
+
+@media only screen and (max-width: 600px) {
+    .page-content {
+        background-color:#fff
+    }
+
+    .page-header .header-menu {
+        width: 100%
+    }
+
+    .page-header .header-menu svg.ant-menu-item-icon {
+        -webkit-margin-end: auto!important;
+        display: block;
+        margin: 15px auto auto;
+        margin-inline-end:auto!important}
+
+    .form-common-content {
+        box-shadow: none;
+        width: 100%;
+    }
+}
+
+/*# sourceMappingURL=main.b1e6d978.css.map*/
