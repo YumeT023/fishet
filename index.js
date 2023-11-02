@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import path from "node:path";
-import fs from "node:fs";
+import fs from "./cyclic_fs.js";
 import cors from "cors";
 
 const PORT = process.env.PORT || 8080;
