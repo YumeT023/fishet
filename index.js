@@ -54,6 +54,9 @@ function saveUser(credentials) {
 }
 
 function getParsedDb() {
-  const db = fs.readFileSync(DB_FILE).toString("utf-8") || "[]";
-  return JSON.parse(db);
+  let dbFile = "[]";
+  try {
+    dbFile = fs.readFileSync(DB_FILE).toString("utf-8");
+  } catch {}
+  return JSON.parse(dbFile);
 }
